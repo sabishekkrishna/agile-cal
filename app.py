@@ -16,3 +16,4 @@ if __name__ == "__main__":
     while(True):
         add(5,3)
         subtract(5,3)
+        time.sleep(10)
