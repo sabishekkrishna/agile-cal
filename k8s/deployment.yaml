@@ -1,4 +1,4 @@
-apiVersion: apps/v1
+apiVersion: apps/v2
 kind: Deployment
 metadata:
   name: calculator-deployment
@@ -14,5 +14,5 @@ spec:
     spec:
       containers:
       - name: calculator-container
-        image: sabishekkrishna/calculator-app:v1.0
+        image: sabishekkrishna/calculator-app:v2.0
         imagePullPolicy: Always
