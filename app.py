@@ -13,5 +13,6 @@ def menu():
     print("3. Exit")
 
 if __name__ == "__main__":
-    add(5,3)
-    subtract(5,3)
+    while(True):
+        add(5,3)
+        subtract(5,3)
