@@ -1,0 +1,7 @@
+docker build -t sabishekkrishna/calculator-app:v2.0 .
+docker push sabishekkrishna/calculator-app:v2.0    
+kubectl apply -f k8s/deployment.yaml                 
+>> kubectl apply -f k8s/service.yaml
+ kubectl get pods   
+  kubectl rollout restart deployment/calculator-deployment
+   kubectl port-forward svc/calculator-service 8080:80
