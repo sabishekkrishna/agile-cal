@@ -1,20 +1,28 @@
-import time
+from flask import Flask
+
+app = Flask(__name__)
+
 def add(a, b):
-    print(a+b)
     return a + b
 
 def subtract(a, b):
-    print(a-b)
     return a - b
 
-def menu():
-    print("\n--- Menu-Driven Calculator ---")
-    print("1. Addition")
-    print("2. Subtraction")
-    print("3. Exit")
+@app.route("/")
+def home():
+    # Hardcoded values for demonstration
+    a = 10
+    b = 5
+    
+    add_result = add(a, b)
+    sub_result = subtract(a, b)
+    
+    # Returns simple text directly to the browser screen
+    return f"""
+    <h1>Menu-Driven Calculator</h1>
+    <p>Addition of {a} and {b} is: <b>{add_result}</b></p>
+    <p>Subtraction of {a} and {b} is: <b>{sub_result}</b></p>
+    """
 
 if __name__ == "__main__":
-    while(True):
-        add(5,3)
-        subtract(5,3)
-        time.sleep(10)
+    app.run(host="0.0.0.0", port=80)
